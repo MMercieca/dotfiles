@@ -14,3 +14,4 @@ mv $FOO/QLStephen.qlgenerator ~/Library/QuickLook/
 qlmanage -r
 
 rm -rf $FOO
+rm -rf QLStephen.qlgenerator.zip
