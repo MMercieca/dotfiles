@@ -30,7 +30,7 @@
 [mergetool]
         keepBackup = false
 [difftool]
-        prompt = false
+	prompt = false
         tool = Kaleidoscope
 [help]
         autocorrect = 1
@@ -44,3 +44,5 @@
 [mergetool "sourcetree"]
 	cmd = ksdiff $LOCAL $REMOTE $MERGED
 	trustExitCode = true
+[diff]
+	tool = Kaleidoscope
