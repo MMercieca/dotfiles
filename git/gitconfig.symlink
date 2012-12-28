@@ -9,6 +9,8 @@
         email = simonsm2@gmail.com
 [alias]
         co = checkout
+        dt = difftool
+        dtc = difftool --cached
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         throwout = !git add . && git reset --hard
