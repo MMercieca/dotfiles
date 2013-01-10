@@ -11,6 +11,7 @@
         co = checkout
         dt = difftool
         dtc = difftool --cached
+        sup = submodule update --init --recursive
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         throwout = !git add . && git reset --hard
