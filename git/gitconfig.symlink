@@ -32,13 +32,15 @@
         whitespace = nowarn
 [mergetool]
         keepBackup = false
+	prompt = false
+        tool = Kaleidoscope
 [difftool]
 	prompt = false
         tool = Kaleidoscope
 [help]
         autocorrect = 1
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [push]
 	default = tracking
 [difftool "sourcetree"]
@@ -48,4 +50,9 @@
 	cmd = ksdiff $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 [diff]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
 	tool = Kaleidoscope
