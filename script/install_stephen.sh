@@ -3,8 +3,6 @@
 
 FOO=`mktemp -d .XXXXXXXXX`
 
-echo $FOO
-
 curl -O http://cloud.github.com/downloads/whomwah/qlstephen/QLStephen.qlgenerator.zip
 
 unzip -d $FOO QLStephen.qlgenerator.zip

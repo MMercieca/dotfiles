@@ -5,16 +5,25 @@
 # This installs some of the common dependencies needed (or at least desired)
 # using Homebrew.
 
-# Check for Homebrew
-if test ! $(which brew)
-then
-  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-  exit
-else
-  echo "  + Homebrew found."
+# OSX-only stuff. Abort if not OSX.
+[[ "$OSTYPE" =~ ^darwin ]] || return 1
+
+# Install Homebrew.
+if [[ ! "$(type -P brew)" ]]; then
+  e_header "Installing Homebrew"
+  true | /usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
 fi
 
-# Install grc and coreutils
-brew install grc coreutils
+if [[ "$(type -P brew)" ]]; then
+  e_header "Updating Homebrew"
+  brew update
 
-brew install tree bash-completion sshuttle wget hub
+  # Install Homebrew recipes.
+  recipes=(git tree grc coreutils bash-completion sshuttle wget hub git-extras htop-osx man2html)
+
+  list="$(to_install "${recipes[*]}" "$(brew list)")"
+  if [[ "$list" ]]; then
+    e_header "Installing Homebrew recipes: $list"
+    brew install $list
+  fi
+fi
