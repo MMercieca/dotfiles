@@ -129,5 +129,7 @@ then
   fi
 fi
 
+script/install_stephen.sh
+
 echo ''
 echo '  All installed!'
