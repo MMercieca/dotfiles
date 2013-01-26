@@ -27,3 +27,4 @@ if [[ "$(type -P brew)" ]]; then
     brew install $list
   fi
 fi
+
