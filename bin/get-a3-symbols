@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+temp_dir = `mktemp -d ".XXXXXX"`.strip
+out_file = "#{temp_dir}/symbols.zip"
+
+`wget http://hudson/job/TSCClass-Enterprise/lastSuccessfulBuild/artifact/build/Enterprise-iphoneos/Ask3-Enterprise.app/Ask3-Enterprise`
+`wget http://hudson/job/TSCClass-Enterprise/lastSuccessfulBuild/artifact/build/Enterprise-iphoneos/Ask3-Enterprise.app.dSYM.zip -O #{out_file}`
+`unzip #{out_file} -d .`
+`chmod +x Ask3-Enterprise`
+`mdimport .`
+
+`rm -r #{temp_dir}`
