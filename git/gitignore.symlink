@@ -4,5 +4,3 @@
 *.swp
 *.rbc
 xcuserdata
-Podfile.lock
-Pods/*
