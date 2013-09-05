@@ -1,6 +1,10 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+export PATH=$(brew --prefix ruby)/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.3-p362/bin/ruby/bin:$PATH
+
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
