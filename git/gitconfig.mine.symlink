@@ -8,6 +8,7 @@
         name = Mike Simons
         email = simonsm2@gmail.com
 [alias]
+        fap = fetch --all --prune
         co = checkout
         dt = difftool
         dtc = difftool --cached
