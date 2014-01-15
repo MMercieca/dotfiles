@@ -15,6 +15,7 @@ Run this:
 ```sh
 git clone https://github.com/waltflanagan/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+git submodule update --init
 script/bootstrap
 ```
 

@@ -1,8 +1,5 @@
 PATH="$PATH:/usr/local/bin"
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
 
 # Tell ls to be colourful
 export CLICOLOR=1
@@ -23,10 +20,6 @@ shopt -s cmdhist
 alias git='xcrun git'
 alias ls='ls -G'
 
-GIT_PS1_SHOWDIRTYSTATE=true
 
-PS1='\[\033[39m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\nಠ_ಠ '
-
-source "`brew --prefix grc`/etc/grc.bashrc"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
