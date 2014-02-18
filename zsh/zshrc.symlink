@@ -1,11 +1,11 @@
 # shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export ZSH=$HOME/Projects/dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+export PROJECTS=~/Projects
 
 #your Wikis directory
-export WIKIS=~/Code/Wikis
+export WIKIS=~/Projects/Wikis
 
 # all of our zsh files
 typeset -U config_files
